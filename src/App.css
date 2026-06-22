@@ -1,2 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
 
-
+body{
+    background: oklch(0.975 0.005 286);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 48px 32px 64px;
+}

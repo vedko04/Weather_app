@@ -1,0 +1,25 @@
+.region_info{
+    display: flex;
+    flex-direction: row;
+}
+
+.temperature_info{
+    display: flex;
+    flex-direction: row;
+}
+
+.weather_day{
+    display: flex;
+    flex-direction: row;
+}
+
+.min_max_temperature{
+    display: flex;
+    flex-direction: row;
+}
+
+.temperature{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
