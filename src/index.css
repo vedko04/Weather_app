@@ -1,2 +1,16 @@
-@import "@vega-ui/theme-core";
-@import "@vega-ui/react/style.css";
+@import '@vega-ui/theme-core';
+@import '@vega-ui/react/style.css';
+
+.light, .dark {
+    --color-primary-0: var(--color-blue-accent-0);
+    --color-primary-100: var(--color-blue-accent-100);
+    --color-primary-200: var(--color-blue-accent-200);
+    --color-primary-300: var(--color-blue-accent-300);
+    --color-primary-400: var(--color-blue-accent-400);
+    --color-primary-500: var(--color-blue-accent-500);
+    --color-primary-600: var(--color-blue-accent-600);
+    --color-primary-700: var(--color-blue-accent-700);
+    --color-primary-800: var(--color-blue-accent-800);
+    --color-primary-900: var(--color-blue-accent-900);
+    --color-primary-1000: var(--color-blue-accent-1000);
+}

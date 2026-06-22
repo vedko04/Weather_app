@@ -1,5 +1,5 @@
 import './App.css'
-
+import '@vega-ui/react/style.css';
 import { Button } from '@vega-ui/react';
 
 function App() {
