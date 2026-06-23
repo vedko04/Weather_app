@@ -4,7 +4,7 @@ import {MapPin, Cloud, ArrowUp, ArrowDown} from "@vega-ui/icons";
 
 const MainWeather = () => {
     return (
-        <section>
+        <section className="main_weather">
             <div className="main_info">
                 <div className="region_info">
                     <Icon><MapPin/></Icon>
