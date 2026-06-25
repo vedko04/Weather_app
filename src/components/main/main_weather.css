@@ -7,28 +7,162 @@
     gap: 32px;
 }
 
+.logo_region{
+    width: 18px;
+    height: 18px;
+    color: royalblue;
+}
+
 .region_info{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 9px;
 }
 
 .temperature_info{
     display: flex;
     flex-direction: row;
+    margin-top: 26px;
+    align-items: flex-start;
 }
 
 .weather_day{
+    margin-top: 18px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.weather_name{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.weather_temperature{
+    color: grey;
+    font-size: 0.9rem;
 }
 
 .min_max_temperature{
+    margin-top: 22px;
     display: flex;
-    flex-direction: row;
+    gap: 22px;
+    font-size: 0.95rem;
 }
 
 .temperature{
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 7.5rem;
+    font-weight: 300;
+    line-height: 0.86;
+    letter-spacing: 0.2em;
 }
+
+.max{
+    color: orange;
+}
+
+.min{
+    color: royalblue;
+}
+
+.number_temperature{
+    font-weight: 600;
+}
+
+.name_temperature{
+    color: grey;
+}
+
+.temperature_div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.celcia{
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-top: 10px;
+    color: darkgrey;
+}
+
+.line_weather_day{
+    border: 1px solid darkgrey;
+    border-radius: 15px;
+    padding: 20px 22px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.line_weather_day h3{
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: grey;
+    margin-bottom: 8px;
+}
+
+.list_temp{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.item_temp{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 2px 5px;
+    cursor: pointer;
+}
+
+.list_hours{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.item_hours{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 2px 5px;
+    cursor: pointer;
+}
+
+.region{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.data{
+    color: darkgrey;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    padding-top: 5px;
+}
+
+.curve_wrap{
+    position: relative;
+    height: 156px;
+}
+
