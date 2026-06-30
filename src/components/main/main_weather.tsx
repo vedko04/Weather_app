@@ -22,9 +22,7 @@ const MainWeather = ({weatherData}: MainWeatherProps) => {
 
     const formattedDateTime: string = calculationDate.toLocaleString('ru-RU');
 
-    if (!weatherData || !weatherData.weather || !weatherData.weather[0] || !weatherData.main) {
-        return <section className="main_weather">Загрузка данных погоды...</section>;
-    }
+
     const apiWeatherStatus = weatherData.weather[0].main;
     const WeatherIcon = weatherComponents[apiWeatherStatus] || Cloud;
 
@@ -40,67 +38,27 @@ const MainWeather = ({weatherData}: MainWeatherProps) => {
                 </div>
                 <p className="data">{formattedDateTime}</p>
                 <div className="temperature_info">
-                    <h2 className="temperature">{weatherData.main.temp}</h2>
+                    <h2 className="temperature">{Math.round(weatherData.main.temp)}</h2>
                     <p className="celcia">°C</p>
                 </div>
-                <div className="weather_day">
-                    <Icon><WeatherIcon /></Icon>
-                    <div className="weather_day_info">
-                        <p className="wether_name">{weatherData.weather[0].description}</p>
-                        <p className="weather_temperature">Ощущается как {weatherData.main.feels_like}°</p>
-                    </div>
-                </div>
+                <p className="weather_temperature">Ощущается как {Math.round(weatherData.main.feels_like)}°</p>
                 <div className="min_max_temperature">
                     <div className="temperature_div">
                         <Icon className="max"><ArrowUp/></Icon>
-                        <p className="number_temperature max">{weatherData.main.temp_max}°</p>
+                        <p className="number_temperature max">{Math.round(weatherData.main.temp_max)}°</p>
                         <p className="name_temperature">макс</p>
                     </div>
                     <div className="temperature_div">
                         <Icon className="min"><ArrowDown/></Icon>
-                        <p className="number_temperature min">{weatherData.main.temp_min}°</p>
+                        <p className="number_temperature min">{Math.round(weatherData.main.temp_min)}°</p>
                         <p className="name_temperature">мин</p>
                     </div>
                 </div>
-
             </div>
-            <div className="line_weather_day">
-                <h3>Почасовой прогноз</h3>
-                <div className="chart_scroll">
-                    <div className="scroll">
-                        <div className="curve_wrap">
-                            <ul className="list_temp">
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                                <li className="item_temp">12</li>
-                            </ul>
-                        </div>
-                        <div className="hours">
-                            <ul className="list_hours">
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                                <li className="item_hours"><Icon><Sun/></Icon><p>12</p></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div className="weather_day">
+                <Icon className='IconWeather'><WeatherIcon/></Icon>
+                <div className="weather_day_info">
+                    <p className="weather_name">{weatherData.weather[0].description}</p>
                 </div>
             </div>
         </section>
