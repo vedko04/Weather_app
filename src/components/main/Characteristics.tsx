@@ -1,4 +1,5 @@
 import './Characteristics.css';
+import Characteristic_cell from "./Characteristic_cell.tsx";
 
 interface CharacteristicsProps {
     weatherData: any;
@@ -35,66 +36,12 @@ const Characteristics = ({ weatherData }: CharacteristicsProps) => {
             </div>
             <div className="container_grid">
                 <ul className="characteristics_list">
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Ветер</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{weatherData.wind.gust}</h3>
-                            <p className='underNumber'>m/s</p>
-                        </div>
-                        <p className="zaglushka">{getWindDirection(weatherData.wind.deg)}</p>
-                    </li>
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Влажность</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{weatherData.main.humidity}</h3>
-                            <p className='underNumber'>%</p>
-                        </div>
-                        <p className="zaglushka">bar</p>
-                    </li>
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Давление</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{convertHpaToMmHg(weatherData.main.grnd_level)}</h3>
-                            <p className='underNumber'>mm</p>
-                        </div>
-                        <p className="zaglushka">Стабильное</p>
-                    </li>
-
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Видимость</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{visible}</h3>
-                            <p className='underNumber'>km</p>
-                        </div>
-                        <p className="zaglushka">Отличная</p>
-                    </li>
-
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Восход</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{formattedTime}</h3>
-                        </div>
-                        <p className="zaglushka">День 16ч 28м</p>
-                    </li>
-                    <li className="characteristics_item">
-                        <div className="icon_name">
-                            <p className="name_characteristics">Закат</p>
-                        </div>
-                        <div className="number_name_characteristics">
-                            <h3 className="number number_characteristics">{formattedTimesunset}</h3>
-                        </div>
-                        <p className="zaglushka">Сумерки 23:05</p>
-                    </li>
+                    <Characteristic_cell name={'Ветер'} discription={'m/s'} mainParameters={weatherData.wind.gust} minorParameters={getWindDirection(weatherData.wind.deg)}/>
+                    <Characteristic_cell name={'Влажность'}  discription={'%'} mainParameters={weatherData.main.humidity} minorParameters={''}/>
+                    <Characteristic_cell name={'Давление'} discription={'mm'} mainParameters={convertHpaToMmHg(weatherData.main.grnd_level)} minorParameters={''}/>
+                    <Characteristic_cell name={'Видимость'} discription={'km'} mainParameters={visible} minorParameters={''}/>
+                    <Characteristic_cell name={'Восход'} discription={'День 16ч 28м'} mainParameters={formattedTime} minorParameters={''}/>
+                    <Characteristic_cell name={'Закат'} discription={'Сумерки 23:05'} mainParameters={formattedTimesunset} minorParameters={''}/>
                 </ul>
             </div>
         </section>

@@ -11,9 +11,7 @@ const Header = () => {
             </div>
             <div className='search_bar'>
                 <TextField>
-                    <Icon>
-                        <Search/>
-                    </Icon>
+                    <Icon><Search/></Icon>
                     <TextFieldInput placeholder="Поиск города…"/>
                 </TextField>
                 <IconButton>
