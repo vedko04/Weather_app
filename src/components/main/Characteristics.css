@@ -30,8 +30,25 @@
 
 }
 
+.underNumber{
+    display: flex;
+    font-size: 0.95rem;
+    color: grey;
+    font-weight: 400;
+    margin-left: 3px;
+    align-items: end;
+    padding-bottom: 5px;
+}
+
+.number{
+    font-weight: 400;
+}
+
 .number_name_characteristics{
     display: flex;
     flex-direction: row;
+    font-size: 1.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
