@@ -10,6 +10,13 @@ function App() {
 
     const[weatherData, setWeatherData] = useState<any>(null);
 
+    const[location, setLocation] = useState<string>('Paris');
+
+    const handleGetData = (data: string) => {
+        setLocation(data);
+        console.log(location);
+    }
+
     useEffect(() => {
         async function loadWeatherData(city: string): Promise<void> {
             try {
@@ -27,9 +34,8 @@ function App() {
             }
         }
 
-        // Здесь же её и вызываем
-        loadWeatherData("London");
-    }, []);
+        loadWeatherData(location);
+    }, [location]);
 
     if (!weatherData) {
         return <div className="main_weather">Загрузка данных о погоде...</div>;
@@ -37,7 +43,7 @@ function App() {
 
   return (
     <div className='app'>
-      <Header/>
+      <Header onSearch={handleGetData} />
       <MainWeather weatherData={weatherData} />
       <Characteristics weatherData={weatherData}/>
       <Footer/>

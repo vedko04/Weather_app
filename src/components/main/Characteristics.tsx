@@ -40,8 +40,8 @@ const Characteristics = ({ weatherData }: CharacteristicsProps) => {
                     <Characteristic_cell name={'Влажность'}  discription={'%'} mainParameters={weatherData.main.humidity} minorParameters={''}/>
                     <Characteristic_cell name={'Давление'} discription={'mm'} mainParameters={convertHpaToMmHg(weatherData.main.grnd_level)} minorParameters={''}/>
                     <Characteristic_cell name={'Видимость'} discription={'km'} mainParameters={visible} minorParameters={''}/>
-                    <Characteristic_cell name={'Восход'} discription={'День 16ч 28м'} mainParameters={formattedTime} minorParameters={''}/>
-                    <Characteristic_cell name={'Закат'} discription={'Сумерки 23:05'} mainParameters={formattedTimesunset} minorParameters={''}/>
+                    <Characteristic_cell name={'Восход'} discription={''} mainParameters={formattedTime} minorParameters={'День 16ч 28м'}/>
+                    <Characteristic_cell name={'Закат'} discription={''} mainParameters={formattedTimesunset} minorParameters={'Сумерки 23:05'}/>
                 </ul>
             </div>
         </section>
