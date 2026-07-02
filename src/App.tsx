@@ -42,12 +42,13 @@ function App() {
     }
 
   return (
-    <div className='app'>
-      <Header onSearch={handleGetData} />
-      <MainWeather weatherData={weatherData} />
-      <Characteristics weatherData={weatherData}/>
-      <Footer/>
-    </div>
+          <div className='app'>
+              <Header onSearch={handleGetData}/>
+              <MainWeather weatherData={weatherData}/>
+              <Characteristics weatherData={weatherData}/>
+              <Footer/>
+          </div>
+
   )
 }
 

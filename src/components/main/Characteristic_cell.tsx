@@ -3,7 +3,7 @@ import './Characteristics.css';
 interface Characteristics {
     name: string,
     discription: string,
-    mainParameters: number | string,
+    mainParameters: React.ReactNode | string,
     minorParameters: string,
 }
 

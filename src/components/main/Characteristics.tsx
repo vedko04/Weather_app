@@ -1,5 +1,6 @@
 import './Characteristics.css';
 import Characteristic_cell from "./Characteristic_cell.tsx";
+import {Slider, SliderProgress} from "@vega-ui/react";
 
 interface CharacteristicsProps {
     weatherData: any;
@@ -28,6 +29,26 @@ const Characteristics = ({ weatherData }: CharacteristicsProps) => {
         return Math.round(hpa * 0.750062);
     }
 
+    function NormalHpaToMmHg (num: number): string {
+        if (750 <= num && num <= 765) return 'В норме';
+        if (num > 765) return 'Выше нормы';
+        return 'Ниже нормы';
+    }
+
+    function Bar(num: number): React.ReactNode {
+        return (
+        <Slider
+            onChangeValue={function cV(){}}
+            style={{
+                maxWidth: '400px'
+            }}
+            value={num}
+        >
+            <SliderProgress />
+        </Slider>
+        );
+    }
+
     return (
         <section className="Characteristics">
             <div className="container">
@@ -37,8 +58,8 @@ const Characteristics = ({ weatherData }: CharacteristicsProps) => {
             <div className="container_grid">
                 <ul className="characteristics_list">
                     <Characteristic_cell name={'Ветер'} discription={'m/s'} mainParameters={weatherData.wind.gust} minorParameters={getWindDirection(weatherData.wind.deg)}/>
-                    <Characteristic_cell name={'Влажность'}  discription={'%'} mainParameters={weatherData.main.humidity} minorParameters={''}/>
-                    <Characteristic_cell name={'Давление'} discription={'mm'} mainParameters={convertHpaToMmHg(weatherData.main.grnd_level)} minorParameters={''}/>
+                    <Characteristic_cell name={'Влажность'}  discription={'%'} mainParameters={weatherData.main.humidity} minorParameters={Bar(weatherData.main.humidity)}/>
+                    <Characteristic_cell name={'Давление'} discription={'mm'} mainParameters={convertHpaToMmHg(weatherData.main.grnd_level)} minorParameters={NormalHpaToMmHg(convertHpaToMmHg(weatherData.main.grnd_level))}/>
                     <Characteristic_cell name={'Видимость'} discription={'km'} mainParameters={visible} minorParameters={''}/>
                     <Characteristic_cell name={'Восход'} discription={''} mainParameters={formattedTime} minorParameters={'День 16ч 28м'}/>
                     <Characteristic_cell name={'Закат'} discription={''} mainParameters={formattedTimesunset} minorParameters={'Сумерки 23:05'}/>

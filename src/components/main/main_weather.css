@@ -5,13 +5,16 @@
     padding: 40px 44px;
     display: flex;
     gap: 32px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    max-width: 888px;
+    min-width: 887px;
 }
 
 .IconWeather{
     height: 200px;
     width: 200px;
+    color: orange;
 }
 
 .logo_region{
